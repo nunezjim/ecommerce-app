@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-  each_cons(3) { |group|  }  @products = Product.all #to show all products on the index page
+    @products = Product.all #to show all products in the index page
   end
 
   def new
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
       redirect_to "/products/#{@product.id}"
   end
 
-#to show each product in the show page
+#to show each products in the show page (by id)
   def show
    @product = Product.find_by(id: params[:id])
    render "show.html.erb"

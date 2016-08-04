@@ -1,9 +1,10 @@
 <section>
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
+      <div class="col-lg-2 col-sm-offset-1">
         <div class="product_single">
            <h3><%= @product.name %><h3>
-          <h3><%= @product.price %></h3>
+           <p>Price: <%= number_to_currency(@product.price) %></p>
+           <img src="<%= @product.image %>" alt="" class="img-thumbnail">
           <h5><%= @product.description %></h5>
          </div>
     </div>

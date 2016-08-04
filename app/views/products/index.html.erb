@@ -5,11 +5,11 @@
 
    <% @products.each do |product| %>
 
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="product_single">
           <h2 class="product_header"><%= product.name %></h2>
           <p>Price: <%= number_to_currency(product.price) %></p>
-
+           <img src="<%= product.image %>" alt="" class="img-thumbnail">
           <p>Description: <%= product.description %></p>
         </div>
       </div>
