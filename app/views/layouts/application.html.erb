@@ -14,10 +14,8 @@
        <nav>
          <ul class="nav navbar-nav navbar-right">
            <li><%= link_to "Home",   '/' %></li>
-           <li><%= link_to "Help",   '#' %></li>
            <% if current_user.nil? %>
            <li><%= link_to "Log in", '/login' %></li>
-           <li><%= link_to "Signup", '/signup' %></li>
            <% end  %>
            <% if current_user %> <!-- def current user in3 the applocation controller -->
            <li><%= link_to "Logout", '/logout', method: "delete" %></li>
