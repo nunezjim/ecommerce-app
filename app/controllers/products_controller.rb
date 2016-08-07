@@ -43,4 +43,18 @@ class ProductsController < ApplicationController
     flash[:success] = "Product Updated"
     redirect_to "/products/#{@product.id}"
   end
+
+  #delete a product
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+
+    flash[:warning] = "Product was deleted"
+    redirect_to "/"
+  end
+
+  def search
+    @products = Product.where("LOWER(name) LIKE ?", "%#{params[:search].downcase}%")
+    render "index.html.erb"
+  end
 end

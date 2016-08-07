@@ -10,17 +10,29 @@
  <body>
      <header class="navbar navbar-fixed-top navbar-inverse">
      <div class="container">
-       <%= link_to "Ecommerce App", '#', id: "logo" %>
+       <%= link_to "Ecommerce App", '/', id: "logo" %>
        <nav>
          <ul class="nav navbar-nav navbar-right">
-           <li><%= link_to "Home",   '#' %></li>
+           <li><%= link_to "Home",   '/' %></li>
            <li><%= link_to "Help",   '#' %></li>
-           <li><%= link_to "Log in", '#' %></li>
-         </ul>
+           <% if current_user.nil? %>
+           <li><%= link_to "Log in", '/login' %></li>
+           <li><%= link_to "Signup", '/signup' %></li>
+           <% end  %>
+           <% if current_user %> <!-- def current user in3 the applocation controller -->
+           <li><%= link_to "Logout", '/logout', method: "delete" %></li>
+           <% end  %>
+           <li><%= link_to "Signup", '/signup' %></li>
+           <li><%= link_to "Help",   '#' %></li>
        </nav>
      </div>
    </header>
    <div class="container">
+     <%= form_tag("/search", method: "get") do %>
+       <%= label_tag(:search) %>
+       <%= text_field_tag(:search) %>
+       <%= submit_tag("Search") %>
+     <% end %>
      <%= yield %>
    </div>
  </body>

@@ -6,6 +6,8 @@
            <p>Price: <%= number_to_currency(@product.price) %></p>
            <img src="<%= @product.image %>" alt="" class="img-thumbnail">
           <h5><%= @product.description %></h5>
+          <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
+          <%= link_to "Delete", "/products/#{@product.id}", {method: :delete, class: "btn btn-danger" }%>
          </div>
     </div>
   </div>
