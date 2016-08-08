@@ -1,4 +1,4 @@
-<section>
+<center><section>
     <div class="row">
       <div class="col-lg-8 col-sm-offset-2">
         <div class="product_single">
@@ -12,9 +12,9 @@
     </div>
   </div>
 </section>
-<%= form_tag("/orders", method: 'post') do %>
+<%= form_tag("/carted_products", method: 'post') do %>
     <%= label_tag(:quantity) %>
     <%= text_field_tag(:quantity) %>
     <%= hidden_field_tag(:product_id, @product.id) %>
-    <%= submit_tag("Buy") %>
+   <%= submit_tag("Add to Cart") %></center>
   <% end %>

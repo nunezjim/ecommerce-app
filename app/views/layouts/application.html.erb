@@ -20,6 +20,7 @@
            <% if current_user %> <!-- def current user in3 the applocation controller -->
            <li><%= link_to "Logout", '/logout', method: "delete" %></li>
            <% end  %>
+           <li><%= link_to "checkout", '/carted_products' %></li>
            <li><%= link_to "Signup", '/signup' %></li>
            <li><%= link_to "Help",   '#' %></li>
        </nav>
